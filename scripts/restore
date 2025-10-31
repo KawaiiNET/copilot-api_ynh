@@ -31,6 +31,7 @@ ynh_script_progression "Reinstalling Bun runtime..."
 # This is the recommended installation method per https://bun.sh/docs/installation
 if ! command -v bun &> /dev/null; then
     export BUN_INSTALL="$install_dir/.bun"
+    export HOME="$data_dir"
     curl -fsSL https://bun.sh/install | bash
     export PATH="$BUN_INSTALL/bin:$PATH"
 fi
