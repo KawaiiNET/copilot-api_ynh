@@ -35,7 +35,7 @@ The following YunoHost packaging files have been added to the repository:
 To install directly from this repository:
 
 ```bash
-sudo yunohost app install https://github.com/MrTakedi/copilot-api --debug
+sudo yunohost app install https://github.com/ericc-ch/copilot-api --debug
 ```
 
 ### Option 2: Install from local directory

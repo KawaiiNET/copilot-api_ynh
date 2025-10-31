@@ -8,7 +8,7 @@
 ; Manifest
     domain="domain.tld"
     path="/path"
-    is_public=1
+    init_main_permission="visitors"
     github_token=""
     account_type="individual"
 ; Checks
@@ -30,4 +30,4 @@ Notification=none
 ;;; Upgrade options
     ; commit=0ea08fe
         name=0.6.0
-        manifest_arg=domain=domain.tld&path=/path&is_public=1&github_token=&account_type=individual
+        manifest_arg=domain=domain.tld&path=/path&init_main_permission=visitors&github_token=&account_type=individual
