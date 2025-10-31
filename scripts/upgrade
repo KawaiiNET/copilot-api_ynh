@@ -51,13 +51,13 @@ popd
 ynh_script_progression "Updating configuration..."
 
 # Update NGINX configuration
-ynh_config_add_nginx
+ynh_add_nginx_config
 
 # Update systemd configuration
-ynh_config_add_systemd
+ynh_add_systemd_config
 
 # Update logrotate configuration
-ynh_config_add_logrotate
+ynh_use_logrotate
 
 #=================================================
 # START SYSTEMD SERVICE

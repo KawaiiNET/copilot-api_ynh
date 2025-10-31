@@ -15,7 +15,7 @@ website = "https://github.com/ericc-ch/copilot-api"
 code = "https://github.com/ericc-ch/copilot-api"
 
 [integration]
-yunohost = ">= 11.2"
+yunohost = ">= 12.0"
 architectures = "all"
 multi_instance = true
 ldap = false

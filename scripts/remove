@@ -13,7 +13,7 @@ if yunohost service status "$app" >/dev/null 2>&1; then
 fi
 
 # Remove the dedicated systemd config
-ynh_config_remove_systemd
+ynh_remove_systemd_config
 
 #=================================================
 # REMOVE LOGROTATE CONFIGURATION
@@ -21,7 +21,7 @@ ynh_config_remove_systemd
 ynh_script_progression "Removing logrotate configuration..."
 
 # Remove the app-specific logrotate config
-ynh_config_remove_logrotate
+ynh_remove_logrotate
 
 #=================================================
 # REMOVE NGINX CONFIGURATION
@@ -29,7 +29,7 @@ ynh_config_remove_logrotate
 ynh_script_progression "Removing NGINX web server configuration..."
 
 # Remove the dedicated NGINX config
-ynh_config_remove_nginx
+ynh_remove_nginx_config
 
 #=================================================
 # END OF SCRIPT
