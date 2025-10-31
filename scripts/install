@@ -44,13 +44,13 @@ popd
 ynh_script_progression "Adding system configurations related to $app..."
 
 # Create a dedicated NGINX config using the conf/nginx.conf template
-ynh_config_add_nginx
+ynh_add_nginx_config
 
 # Create a dedicated systemd config
-ynh_config_add_systemd
+ynh_add_systemd_config
 
 # Use logrotate to manage application logfile(s)
-ynh_config_add_logrotate
+ynh_use_logrotate
 
 yunohost service add "$app" --description="Copilot API Proxy" --log="/var/log/$app/$app.log"
 
