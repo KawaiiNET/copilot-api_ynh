@@ -1,0 +1,24 @@
+version = "1.0"
+
+[main]
+name = "Main configuration"
+
+    [main.config]
+    name = "Configuration"
+
+        [main.config.github_token]
+        ask.en = "GitHub Token"
+        ask.fr = "Jeton GitHub"
+        type = "string"
+        bind = "github_token:/install_dir/.env"
+        help.en = "Your GitHub personal access token for Copilot API authentication"
+        help.fr = "Votre jeton d'accès personnel GitHub pour l'authentification de l'API Copilot"
+
+        [main.config.account_type]
+        ask.en = "Account Type"
+        ask.fr = "Type de compte"
+        type = "select"
+        choices = ["individual", "business", "enterprise"]
+        bind = "account_type:/install_dir/.env"
+        help.en = "Your GitHub Copilot account type"
+        help.fr = "Votre type de compte GitHub Copilot"

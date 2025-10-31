@@ -1,0 +1,72 @@
+packaging_format = 2
+
+id = "copilot-api"
+name = "Copilot API Proxy"
+description.en = "Turn GitHub Copilot into OpenAI/Anthropic API compatible server"
+description.fr = "Transformez GitHub Copilot en serveur compatible avec l'API OpenAI/Anthropic"
+
+version = "0.7.0~ynh1"
+
+maintainers = ["Erick Christian"]
+
+[upstream]
+license = "MIT"
+website = "https://github.com/ericc-ch/copilot-api"
+code = "https://github.com/ericc-ch/copilot-api"
+
+[integration]
+yunohost = ">= 11.2"
+architectures = "all"
+multi_instance = true
+ldap = false
+sso = false
+disk = "50M"
+ram.build = "100M"
+ram.runtime = "50M"
+
+[install]
+    [install.domain]
+    type = "domain"
+
+    [install.path]
+    type = "path"
+    default = "/copilot-api"
+
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
+    [install.github_token]
+    ask.en = "GitHub token for Copilot API (optional - can be configured later)"
+    ask.fr = "Jeton GitHub pour l'API Copilot (optionnel - peut être configuré plus tard)"
+    type = "string"
+    optional = true
+    default = ""
+
+    [install.account_type]
+    ask.en = "GitHub Copilot account type"
+    ask.fr = "Type de compte GitHub Copilot"
+    type = "select"
+    choices = ["individual", "business", "enterprise"]
+    default = "individual"
+
+[resources]
+    [resources.sources.main]
+    url = "https://github.com/ericc-ch/copilot-api/archive/refs/tags/v0.7.0.tar.gz"
+    sha256 = "d068030271b917c9f59e21dda4dbd36840372160efa1b1f0598e35dc277689de"
+    autoupdate.strategy = "latest_github_tag"
+
+    [resources.system_user]
+
+    [resources.install_dir]
+
+    [resources.data_dir]
+
+    [resources.permissions]
+    main.url = "/"
+
+    [resources.ports]
+    main.default = 4141
+
+    [resources.apt]
+    packages = ["curl", "unzip"]
