@@ -14,7 +14,8 @@ ynh_systemctl --service="$app" --action="stop" --log_path="/var/log/$app/$app.lo
 #=================================================
 ynh_script_progression "Upgrading Bun runtime..."
 
-# Ensure Bun is installed
+# Ensure Bun is installed using official installation script
+# This is the recommended installation method per https://bun.sh/docs/installation
 if ! command -v bun &> /dev/null; then
     export BUN_INSTALL="$install_dir/.bun"
     curl -fsSL https://bun.sh/install | bash

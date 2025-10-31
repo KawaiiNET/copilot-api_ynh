@@ -11,7 +11,9 @@ Environment="NODE_ENV=production"
 Environment="PATH=__INSTALL_DIR__/.bun/bin:/usr/local/bin:/usr/bin:/bin"
 Environment="HOME=__DATA_DIR__"
 EnvironmentFile=__INSTALL_DIR__/.env
-# Pass GitHub token via -g flag if set, otherwise authenticate interactively on first run
+# Using shell parameter expansion to conditionally pass GitHub token:
+# ${ACCOUNT_TYPE:-individual} provides default value if not set
+# ${GH_TOKEN:+--github-token "$GH_TOKEN"} only adds the flag if GH_TOKEN is set
 ExecStart=/bin/sh -c 'exec __INSTALL_DIR__/.bun/bin/bun run __INSTALL_DIR__/dist/main.js start --port __PORT__ --account-type ${ACCOUNT_TYPE:-individual} ${GH_TOKEN:+--github-token "$GH_TOKEN"}'
 StandardOutput=append:/var/log/__APP__/__APP__.log
 StandardError=append:/var/log/__APP__/__APP__.log

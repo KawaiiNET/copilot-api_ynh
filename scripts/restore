@@ -27,7 +27,8 @@ chmod -R 750 "$data_dir"
 #=================================================
 ynh_script_progression "Reinstalling Bun runtime..."
 
-# Install Bun
+# Install Bun using official installation script from bun.sh
+# This is the recommended installation method per https://bun.sh/docs/installation
 if ! command -v bun &> /dev/null; then
     export BUN_INSTALL="$install_dir/.bun"
     curl -fsSL https://bun.sh/install | bash
