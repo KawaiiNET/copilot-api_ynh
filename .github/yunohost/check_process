@@ -19,7 +19,7 @@
     setup_private=1
     setup_public=1
     upgrade=1
-    # 0.6.0
+    # Upgrade from previous version (0.7.0)
     upgrade=1 from_commit=0ea08fe
     backup_restore=1
     multi_instance=1
@@ -29,5 +29,5 @@ Email=
 Notification=none
 ;;; Upgrade options
     ; commit=0ea08fe
-        name=0.6.0
+        name=0.7.0
         manifest_arg=domain=domain.tld&path=/path&init_main_permission=visitors&github_token=&account_type=individual
